@@ -21,4 +21,9 @@ public class ImplAlumnoService implements IAlumnoService{
 		return alumnoDao.findAll();
 	}
 
+	@Override
+	public Alumno findById(Integer id) {
+		return alumnoDao.findById(id).orElse(null);
+	}
+
 }
