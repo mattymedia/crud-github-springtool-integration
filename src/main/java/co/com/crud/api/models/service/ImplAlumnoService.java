@@ -22,8 +22,15 @@ public class ImplAlumnoService implements IAlumnoService{
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public Alumno findById(Integer id) {
 		return alumnoDao.findById(id).orElse(null);
+	}
+
+	@Override
+	@Transactional
+	public Alumno save(Alumno alumno) {
+		return alumnoDao.save(alumno);
 	}
 
 }

@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,5 +28,10 @@ public class AlumnoController {
 	@GetMapping("/alumnos/{id}")
 	public Alumno findById(@PathVariable Integer id) {
 		return alumnoService.findById(id);
+	}
+	
+	@PostMapping("/alumnos")
+	public Alumno save(@RequestBody Alumno alumno) {
+		return alumnoService.save(alumno);
 	}
 }
