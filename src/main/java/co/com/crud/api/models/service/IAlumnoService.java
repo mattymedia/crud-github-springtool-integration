@@ -10,4 +10,6 @@ public interface IAlumnoService {
 	public Alumno findById(Integer id);
 	
 	public Alumno save(Alumno alumno);
+	
+	public void delete(Integer id);
 }

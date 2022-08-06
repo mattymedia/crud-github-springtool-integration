@@ -33,4 +33,9 @@ public class ImplAlumnoService implements IAlumnoService{
 		return alumnoDao.save(alumno);
 	}
 
+	@Override
+	public void delete(Integer id) {
+		alumnoDao.deleteById(id);
+	}
+
 }
